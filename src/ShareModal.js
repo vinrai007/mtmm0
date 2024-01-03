@@ -1,4 +1,4 @@
-// import { Modal, Button } from 'react-bootstrap';
+import { Modal, Button } from 'react-bootstrap';
 import "bootstrap/dist/css/bootstrap.min.css";
 
 import { toast } from 'react-toastify';
