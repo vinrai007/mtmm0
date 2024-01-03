@@ -1,38 +1,630 @@
-.App {
-  text-align: center;
+* {
+  box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+a {
+  cursor: pointer;
+  color: inherit;
+  text-decoration: none;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+body {
+  color: #222;
+  /* max-width: 100vh; */
+    height: 100vh;
   }
+
+img {
+  max-width: 100%;
+  /* max-height: 100%;
+  object-fit: cover; */
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
+main {
+  /* padding: 10px; */
+  /* max-width: 960px; */
+    /* height: 100vh; */
+  margin: 0 auto;
+  background-color: #F2F1EB;
+  padding-bottom: 40px;
+  /* height: 100%; */
+      font-family: nyt-cheltenham, georgia, 'times new roman', times, serif;
+}
+
+.app{
+        height: 70vh;
+        margin-top: 10px;
+        /* background-color: white; */
+}
+
+
+header {
+  /* display:flex; */
+  /* max-width: 960px; */
+  justify-content: space-between;
+  padding-top: 30px;
+  /* padding-bottom:50px; */
+  padding-right: 30px;
+  padding-left: 30px;
+  /* margin-top: 20px;
+  margin-bottom: 50px; */
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  color:white;
+  /* background-color:#04364A; */
+  background-color: rgba(0, 0, 0, 0.3);
+  /* background-image: url(../src/assets/mtm3.jpg); */
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.headercolour {
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+ /* background-color: rgba(0, 0, 0, 0.3); */
+ background-color: #3F2E3E;
+ z-index: 100;
+  background-image: url(../src/assets/mtm3.jpg);
+}
+
+header img{
+  width:25px;
+  margin-right: 10px;
+}
+
+header a {
+  text-decoration: none;
+  color: inherit;
+}
+header a:hover {
+  /* text-decoration: none; */
+  color: #72FFFF;
+}
+
+header a.logo {
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+.logo{
+      font-family: nyt-cheltenham, georgia, 'times new roman', times, serif;
+}
+
+header nav {
+  display: flex;
+  gap: 24px;
+}
+.brandname{
+  font-size: 35px;
+  font-weight: 500;
+  margin-left: 13%;
+  font-family: nyt-cheltenham, georgia, 'times new roman', times, serif;
+}
+
+.headerup{
+    display: flex;
+    /* grid-template-columns: 1fr 1fr; */
+    justify-content: space-between;
+    align-items: center;
+    max-width: 960px;
+    margin: auto;
+    /* background-color: rgba(0, 0, 0, 0.3); */    
+}
+.toggleitems{
+  padding: 5px 5px 5px 5px;
+}
+.toggleitems:hover{
+  color: #2E8A99;
+}
+.toggleitems a{
+  text-decoration: none;
+  color: #000;
+}
+.toggleitems a:hover{
+    color: #2E8A99;
+}
+.headerdw{
+  max-width: 960px;
+  margin: 0% auto;
+  color: white;
+  /* background-color: #DDE6ED; */
+    /* background-color: rgba(0, 0, 0, 0.3); */
+      /* Adjust the alpha value as needed */
+      border-radius: 10px 10px 0 0;
+}
+.headerdw .nav-link{
+  color: white;
+}
+.headerdw .nav-link:hover {
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.headerdw .nav-tabs .nav-link.active{
+  background-color: #F2F1EB ;
+      border-color: #F2F1EB;
+}
+.headerdw .nav-tabs{
+  /* border-bottom-width: 0px;} */
+    --bs-nav-tabs-border-bottom-width: 0px;
+    border-color: #F2F1EB;
+
+}
+.joinpage{
+  max-width: 860px;
+  margin: auto;
+}
+.joinpage li{
+  max-width: 800px;
+}
+.joinpage button {
+  width: 200px;
+  margin: auto;
+  background-color: #C69749;
+  border-radius: 10px;
+}
+.joinpage h1 {
+  padding: 50px 0px 20px 0px;
+  font-weight: 600;
+}
+.joinpage p {
+  padding-top: 20px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.slides{
+  max-width: 960px;
+  margin: auto;
+  text-align: center;
+  /* padding-bottom: 10px; */
+  padding: 10px;
+}
+.slides a{
+  text-decoration: none;
+}
+.slides div.post{
+  display: block;
+  padding-bottom: 50px;
+  text-align: center;
+  padding-top: 0%;
+  padding: 0px 10px 50px 0px;
+}
+.slides div.post div.image{
+    width: 860px;
+    height: 400px;
+    margin: auto;
+    border-radius: 10px;
+    /* padding: 10px; */
+}
+.slides div.post p.info{
+  display: grid;
+  margin: 10px auto;
+}
+.slides div.post p.info a.author{
+  /* margin: 24px 0; */
+  text-align: center;
+  /* margin:auto; */
+}
+.slides .interaction-grid{
+  margin: auto;
+  padding-right: 170px;
+}
+.slides .carousel-control-next {
+    background-color: rgba(0, 0, 0, 0.8);
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    margin-top: 250px;
+    margin-right: 45px;
+}
+.slides .carousel-control-prev {
+  background-color: rgba(0, 0, 0, 0.8);
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+   margin-top: 250px;
+      margin-left: 35px;
+}
+.slides .carousel-indicators [data-bs-target] {
+  background-color: #333;
+}
+
+.home{
+  display: grid;
+    /* grid-template-columns: 1fr 1fr 1fr; */
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      grid-template-rows: repeat(auto-fill, minmax(200px, 1fr));
+    max-width: 960px;
+    /* gap: 10%; */
+    margin: auto;
+    /* max-width: 100%; */
+    overflow: visible;
+}
+.home a {
+  text-decoration: none;
+}
+.index a{
+  text-decoration: none;
+}
+.home div.post {
+  max-width: 350px;
+  margin: 10px;
+  height: 100%;
+  padding: 30px 10px 10px 0px;
+}
+div h1{
+  /* margin-left: 100px; */
+  /* padding-left: 100px; */
+  /* margin: auto; */
+  text-align: center ;
+}
+.sorting-buttons{
+  width: 300px;
+  margin: auto;
+  display: flex;
+  gap: 20px;
+  /* padding-right: 60px; */
+  /* padding: 10px; */
+  padding-top: 10px;
+    padding-right: 10px;
+}
+.sorting-buttons button{
+  padding: 3px 10px;
+    border-radius: 10px;
+      /* padding-right: 170px; */
+      background-color: #E5E5CB;
+}
+.sorting-buttons .active{
+      background-color: #C69749;
+}
+.input{
+  margin: 10px auto 0px auto;
+  width: 300px;
+  border-radius: 5px;
+}
+
+.about{
+  max-width: 860px;
+  margin: auto;
+}
+
+.about h1{
+  padding: 50px 0px 20px 0px;
+  font-weight: 600;
+}
+.para-head{
+  text-align: center;
+  max-width: 80%;
+  margin: auto;
+  font-weight: 600;
+  padding: 10px;
+  border-bottom: 1px solid #3F2E3E;
+  border-top: 1px solid #3F2E3E;
+}
+.about p{
+  padding-top: 10px;
+}
+.about button{
+  width: 100px;
+  margin: auto;
+  background-color: #C69749;
+  border-radius: 10px;
+}
+div.post {
+  display: grid;
+  /* max-height: 200px; */
+  max-width: 960px;
+  grid-template-columns: 1fr;
+  /* width: 960px; */
+  /* height: 220px; */
+  /* max-width: 100%;
+  max-height: 100%; */
+  /* max-width: 100%;
+  max-height: 100%; */
+  gap: 20px;
+  margin: 0 auto;
+  margin-top:30px;
+  padding: 30px 10px 10px 10px;
+  /* align-items: center; */
+  /* border: #222; */
+  border-bottom: 1px solid #3F2E3E;
+  /* border-left: 5px solid #3F2E3E; */
+  border-radius: 10px;
+}
+
+div.post:hover {
+  background-color: #EEEEEE;
+}
+
+
+ div.post div.image {
+  width: 300px;
+  height: 200px;
+  max-width: 100%;
+  max-height: 100%;
+  display: flex;
+  overflow: hidden;
+  border-radius: 10px;
+} 
+
+div.post div.image img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+} 
+
+
+@media screen and (min-width: 700px) {
+  .home div.post{
+    grid-template-columns: 1fr;
   }
-  to {
-    transform: rotate(360deg);
+  div.post {
+    grid-template-columns: .9fr 1.1fr;
   }
+}
+
+div.post a{
+    text-decoration: none;
+}
+div.post div.texts h2 {
+  margin: 0;
+  font-size: 2rem;
+  color: black;
+  text-decoration: none;
+  font-weight: 200;
+  font-family: nyt-cheltenham, georgia, 'times new roman', times, serif;
+}
+
+div.post div.texts a {
+  text-decoration: none;
+  color: inherit;
+}
+
+div.post p.info {
+  margin: 24px 0;
+  color: #888;
+  font-size: 1rem;
+  font-weight: bold;
+  display: flex;
+  gap: 10px;
+  /* font-family: nyt-cheltenham, georgia, 'times new roman', times, serif; */
+}
+
+div.post p.info .author {
+  color: #626161;
+  font-style:italic;
+      font-family: nyt-cheltenham, georgia, 'times new roman', times, serif;
+}
+
+div.post p.summary {
+  margin: 10px 0;
+  line-height: 1.8rem;
+  color: #333;
+  text-decoration: none;
+  font-family: nyt-cheltenham, georgia, 'times new roman', times, serif;
+}
+.interaction-grid {
+  width: 100px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  /* Create a 3-column grid */
+  gap: 10px;
+  /* Add some spacing between the buttons */
+}
+.interaction-btn{
+  background-color: #F2F1EB;
+  width: 50px;
+  border-radius: 100px;
+  height: 40px;
+}
+.interaction-btn:hover{
+  background-color: #CEE6F3;
+}
+/* .interaction-icon{
+  border: 1px solid #222;
+} */
+.ppsib{
+  margin: 0px 5% 10px ;
+  padding-top: 10px;
+  border-top: 1px solid #3F2E3E;
+}
+.sendtab .modal-content{
+  width: 300px;
+  margin: auto;
+}
+.modal-dialog{
+  width: 300px;
+}
+.senddtab{
+  width: 300px;
+  margin: auto;
+}
+.senddtab .btn{
+  margin-left: 0%;
+}
+.senddtab .btn:hover{
+    background-color: #CEE6F3;
+}
+form.login,
+form.register {
+  max-width: 400px;
+  margin: 20px auto;
+      height: 100vh;
+}
+/* .infoform{
+  height: 500px;
+} */
+.infoform input {
+  display: block;
+  margin-bottom: 5px;
+  width: 100%;
+  /* height: 100px; */
+  padding: 5px 7px;
+  border: 2px solid #ddd;
+  border-radius: 5px;
+  background-color: #fff;
+}
+
+
+button {
+  cursor: pointer;
+  width: 100%;
+  display: block;
+  background-color: #3085C3;
+  border: 0;
+  color: #fff;
+  border-radius: 5px;
+  padding: 7px 0;
+}
+button:hover{
+  background-color: #91C8E4;
+}
+.color-change-button.clicked {
+  background-color: #2F89FC;
+}
+div.comment-box{
+  max-width: 90%;
+  border-radius: 5px;
+  margin: auto;
+  padding-top: 20px;
+  border-top: 1px solid #3F2E3E ;
+  /* background-color: #aaa; */
+}
+.comment-text{
+  width: 100%;
+  padding: 10px;
+  align-content: center;
+  border-radius: 10px;
+  height: 100px;
+  background-color: #ADC4CE;
+
+}
+.post-btn{
+  width: 100px;
+  height: 40px;
+  float: right;
+  display: block;
+  border-radius: 10px;
+    border: 1px solid #3F2E3E;
+}
+.comment{
+  max-width: 90%;
+  margin: 50px auto;
+  padding: 10px;
+  background-color: #E3F6FF;
+  /* border: 1px solid #3F2E3E; */
+  border-radius: 10px;
+}
+.createnewpost{
+  max-width: 960px;
+  margin: 20px auto;
+  padding: 10px;
+      height: 100vh;
+}
+.createnewpost input {
+  display: block;
+  margin-bottom: 5px;
+  width: 100%;
+  /* height: 100px; */
+  padding: 5px 7px;
+  border: 2px solid #ddd;
+  border-radius: 5px;
+  background-color: #fff;
+}
+.editpost {
+  max-width: 960px;
+  margin: 20px auto;
+  padding: 10px;
+  /* height: 100vh; */
+}
+
+.editpost input {
+  display: block;
+  margin-bottom: 5px;
+  width: 100%;
+  /* height: 100px; */
+  padding: 5px 7px;
+  border: 2px solid #ddd;
+  border-radius: 5px;
+  background-color: #fff;
+}
+
+form.login h1,
+form.register h1 {
+  text-align: center;
+}
+
+div.post-page{
+  padding: 10px;
+  max-width: 960px;
+  margin: 0 auto;
+}
+div.post-page div.image {
+      /* width: 860px;
+        height: 400px; */
+  max-height: 400px;
+  display: flex;
+  overflow: hidden;
+}
+
+div.post-page div.image img {
+  /* max-height: 100px; */
+  object-fit: cover;
+  object-position: center center;
+  width: 100%;
+}
+
+div.post-page a {
+  color: #333;
+  text-decoration: none;
+}
+
+div.post-page h1 {
+  text-align: center;
+  margin: 10px 0 5px;
+  font-family: nyt-cheltenham, georgia, 'times new roman', times, serif;
+  font-weight: 600;
+}
+
+div.post-page time {
+  text-align: center;
+  display: block;
+  font-size: 1rem;
+  color: #aaa;
+  margin: 10px 0;
+}
+
+div.post-page div.author {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: .7rem;
+  font-weight: bold;
+}
+
+div.content p {
+  line-height: 1.7rem;
+  margin: 30px 0;
+      font-family: nyt-cheltenham, georgia, 'times new roman', times, serif;
+}
+
+div.content li {
+  margin-bottom: 10px;
+}
+
+div.edit-row {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+div.post-page a.edit-btn {
+  background-color: #333;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  color: #fff;
+  padding: 15px 30px;
+  border-radius: 5px;
+  text-decoration: none;
+}
+
+a svg {
+  height: 20px;
 }
