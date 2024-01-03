@@ -38,7 +38,7 @@ export default function Header() {
       .then(response => response.json())
       .then(userInfo => setUserInfo(userInfo))
       .catch(error => console.error('Error fetching user profile:', error));
-  }, []);
+  }, [setUserInfo]);
 
   function logout() {
     fetch(`${base_url}/logout`, {

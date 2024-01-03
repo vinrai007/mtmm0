@@ -20,7 +20,7 @@ export default function EditPost() {
           setSummary(postInfo.summary);
         });
       });
-  }, []);
+  }, [base_url , id]);
 
   async function updatePost(ev) {
     ev.preventDefault();

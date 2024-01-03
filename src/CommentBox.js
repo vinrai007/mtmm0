@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 function CommentBox(props) {
-  const { postId } = props;
+  // const { postId } = props;
   const [comment, setComment] = useState(""); // State to track the comment text
   const [comments, setComments] = useState([]); // State to store comments
 

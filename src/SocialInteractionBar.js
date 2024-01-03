@@ -1,7 +1,7 @@
 import React, { useState ,useContext , useEffect} from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faHeart, faComment, faShare } from "@fortawesome/free-solid-svg-icons";
-import CommentBox from "./CommentBox"; // Import the CommentBox component
+import { faHeart} from "@fortawesome/free-solid-svg-icons";
+// import CommentBox from "./CommentBox"; // Import the CommentBox component
 import {UserContext} from "./UserContext";
 
 // import { Button } from 'react-bootstrap';
@@ -24,7 +24,7 @@ function SocialInteractionBar({ postId }) {
                 setIsLiked(data.isLiked);
                 setLikesCount(data.likesCount);
             });
-    }, [postId, userId]);
+    }, [postId, userId, base_url]);
 
   const [showModal, setShowModal] = useState(false);
   const shareLink = `/post/${postId}`;
