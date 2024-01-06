@@ -686,6 +686,7 @@ a svg {
   background-color: black;
   color: white;
   padding: 20px;
+  margin-top: 15px;
 }
 .footer-page{
   max-width: 960px;
