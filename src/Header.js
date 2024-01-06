@@ -233,11 +233,11 @@ export default function Header() {
                     id={`offcanvasNavbarDropdown-expand-${expand}`}
                   >
                     <NavDropdown.Item href="#action3">
-                              <Nav.Link href="/Home">Home</Nav.Link>
+                              <Nav.Link href="https://mtm-6emn.onrender.com/Home">Home</Nav.Link>
 
                     </NavDropdown.Item>
                     <NavDropdown.Item href="#action4">
-                              <Nav.Link href="/Archive">Archive</Nav.Link>
+                              <Nav.Link href="https://mtm-6emn.onrender.com/Archive">Archive</Nav.Link>
 
                     </NavDropdown.Item>
                     <NavDropdown.Divider />

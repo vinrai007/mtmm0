@@ -22,7 +22,7 @@ function App() {
         <Route path="/" element={<Layout />}>
           <Route index element={<HomePage />} />
           <Route path="https://mtm-6emn.onrender.com/Home" element={<HomePage />} />
-          <Route path="https://mtm-6emn.onrender.com/Archive" element={<IndexPage />} />
+          <Route path="/Archive" element={<IndexPage />} />
           <Route path="/About" element={<AboutPage />} />
           <Route path="/Join" element={<JoinPage />} />
           <Route path="https://mtm-6emn.onrender.com/login" element={<LoginPage />} />
