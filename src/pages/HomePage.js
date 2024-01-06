@@ -24,7 +24,7 @@ export default function HomePage() {
     // const [hposts, sethPosts] = useState([]);
   const [show, setShow] = useState(true);
   const [searchQuery, setSearchQuery] = useState('');
-const [filteredPosts, setFilteredPosts] = useState([]);
+const [/*filteredPosts,*/ setFilteredPosts] = useState([]);
 const handleSearch = () => {
   // Perform the search logic here
   const searchRegex = new RegExp(searchQuery, 'i'); // 'i' for case-insensitive
@@ -39,7 +39,7 @@ const handleSearch = () => {
 };
 
   const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
+  // const handleShow = () => setShow(true);
     const {setUserInfo,userInfo} = useContext(UserContext);
      const username = userInfo?.username;
 
@@ -75,7 +75,7 @@ const handleSearch = () => {
         setLoading(false);
         // You might want to show an error message to the user
       });
-  }, []);
+  }, [base_url]);
   // Assuming you have a state variable for the search term
 
   if (loading) {
@@ -108,7 +108,7 @@ const handleSearch = () => {
       </Modal>
         )}
     {/* //   <div className="home"> */}
-      {/* <div className="slides">
+      <div className="slides">
         <Carousel slide={false}>
           <Carousel.Item>
             {posts.length > 0 && (
@@ -136,7 +136,7 @@ const handleSearch = () => {
           )}
           </Carousel.Item>
         </Carousel>
-      </div> */}
+      </div>
         <div>
         <h1>Archives</h1>
               <div className="sorting-buttons">

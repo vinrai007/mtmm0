@@ -68,9 +68,9 @@ export default function PostPage() {
       <div className="author">by @{postInfo.author.username}</div> */}
              <div className="post-info">
               <time>{format(new Date(postInfo.createdAt),  "MMMM d, yyyy")}</time>
-      <div className="author">by @{postInfo.author.username}</div>
+      <div className="author">by @{postInfo.author}</div>
       </div>
-      {userInfo.id === postInfo.author._id && (
+      {userInfo.id === postInfo.authorId && (
         <div className="edit-row">
           <Link className="edit-btn" to={`/edit/${postInfo._id}`}>
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
@@ -91,7 +91,7 @@ export default function PostPage() {
 
       <div className="comment-boxx">
         <div className="ppsib"><SocialInteractionBar postId={postInfo._id} /></div>
-        <CommentBoxx postId={postInfo._id} />
+        <CommentBoxx postId={postInfo._id} userId={userInfo.id} username={userInfo.username} />
         {comments.map(comment => (
         <Comment {...comment} />
         ))}

@@ -73,8 +73,8 @@ function SocialInteractionBar({ postId }) {
 
     // setShares(shares + 1);
     // const shareLink = `https://example.com/post/${_id}`;
-    const shareLink = `/post/${postId}`;
-    alert(`Share this link: ${shareLink}`);
+    // const shareLink = `/post/${postId}`;
+    // alert(`Share this link: ${shareLink}`);
   };  
     const handleModalClose = () => {
     setShowModal(false);

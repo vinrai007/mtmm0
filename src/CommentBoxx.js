@@ -2,7 +2,7 @@
 import React, { useState} from 'react';
 import Comment from './Comment';
 
-function CommentBoxx({ postId }) {
+function CommentBoxx({ postId , userId, username }) {
   // const { postId } = props;
   const [comment, setComment] = useState(""); // State to track the comment text
   const [comments, setComments] = useState([]); // State to store comments
@@ -18,6 +18,8 @@ function CommentBoxx({ postId }) {
       body: JSON.stringify({
         text: comment,
         postId: postId,
+        userId: userId,
+        username : username,
       }),
       credentials: 'include',
     });

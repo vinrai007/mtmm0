@@ -13,7 +13,8 @@ import 'react-toastify/dist/ReactToastify.css';
 
 const JoinAsWriterPage = () => {
       const base_url = `https://mtmm1-2-backend.onrender.com`;
-      const {setUserInfo,userInfo} = useContext(UserContext);
+    const { setUserInfo, userInfo } = useContext(UserContext);
+    const userId = userInfo.id;
   useEffect(() => {
     fetch(`${base_url}/profile`, {
       credentials: 'include',
@@ -26,7 +27,14 @@ const JoinAsWriterPage = () => {
     const handleJoinAsWriter = async () => {
     try {
       const response = await fetch(`${base_url}/join-as-writer`, {
-        method: 'POST',
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        userId: userId,
+        // username : username,
+      }),          
         credentials: 'include',
       });
 

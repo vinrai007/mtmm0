@@ -1,20 +1,25 @@
 // import ReactQuill from "react-quill";
 import 'react-quill/dist/quill.snow.css';
-import {useState} from "react";
+import { useState } from "react";
+import {useContext} from "react";
 import {Navigate} from "react-router-dom";
 import Editor from "../Editor";
+import {UserContext} from "../UserContext";
+
 // import sendinblue from 'sendinblue-api';
 
 
 export default function CreatePost() {
-    const base_url = `https://mtmm1-2-backend.onrender.com`;
+  const base_url = `https://mtmm1-2-backend.onrender.com`;
   const [title,setTitle] = useState('');
   const [summary,setSummary] = useState('');
   const [content,setContent] = useState('');
   const [files, setFiles] = useState('');
   const [redirect, setRedirect] = useState(false);
   const [isClicked, setIsClicked] = useState(false);
-
+  const { userInfo } = useContext(UserContext);
+  const userId = userInfo.id;
+  const username = userInfo.username;
   // const sendinBlueClient = new sendinblue({ apiKey: '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' });
 
   const handleButtonClick = () => {
@@ -32,9 +37,12 @@ export default function CreatePost() {
     data.set('summary', summary);
     data.set('content', content);
     data.set('file', files[0]);
+    data.set('userId', userId); // Include userId in the FormData
+    data.set('username', username); // Include userId in the FormData
     ev.preventDefault();
     const response = await fetch(`${base_url}/post`, {
       method: 'POST',
+      // userId: userId,
       body: data,
       credentials: 'include',
     });

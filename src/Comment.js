@@ -1,5 +1,5 @@
 import {format} from "date-fns";
-import { useState } from "react";
+// import { useState } from "react";
 // import CommentBox from "./CommentBox";
 // import SocialInteractionBar from "./SocialInteractionBar"
 
@@ -40,7 +40,7 @@ export default function Comment({ _id, text, createdAt, author }) {
       <div className="comment">
        <div className="texts">
         <p className="info">
-          <div className="author">{author.username} . </div>
+          <div className="author">{author} . </div>
           <time>{format(new Date(createdAt), "MMMM d, yyyy")}</time>
         </p>
         <div /*key={comment.id}*/ className="commentt">

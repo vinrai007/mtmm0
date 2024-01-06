@@ -24,21 +24,50 @@ export default function Header() {
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
   // const base_url = 'http://localhost:4000';
-    const base_url = 'https://mtmm1-2-backend.onrender.com';
+  const base_url = `https://mtmm1-2-backend.onrender.com`;
+  // const [userInfo, setUserInfo] =  
 
 
+  // const {setUserInfo,userInfo} = useContext(UserContext);
 
-  const {setUserInfo,userInfo} = useContext(UserContext);
-
+  const { setUserInfo, userInfo } = useContext(UserContext);
+  const storedUser = localStorage.getItem('user');
 
   useEffect(() => {
-    fetch(`${base_url}/profile`, {
-      credentials: 'include',
-    })
-      .then(response => response.json())
-      .then(userInfo => setUserInfo(userInfo))
-      .catch(error => console.error('Error fetching user profile:', error));
-  }, [setUserInfo]);
+    const checkUserSession = async () => {
+      try {
+        const response = await fetch(`${base_url}/user`, {
+          method: 'GET',
+          credentials: 'include',  // Include credentials (cookies) in the request
+        });
+
+        if (response.ok) {
+          const userInfo = await response.json();
+          setUserInfo(userInfo);
+          // setRedirect(true);
+        } else {
+          // Handle unauthorized or other errors
+        }
+      } catch (error) {
+        console.error('An error occurred while checking user session:', error);
+      }
+    };
+
+    if (storedUser) {
+      setUserInfo(JSON.parse(storedUser));
+      checkUserSession(); // Check user session on page load
+    }
+  }, [setUserInfo, storedUser]);
+
+      
+  // useEffect(() => {
+  //   fetch(`${base_url}/profile`, {
+  //     credentials: 'include',
+  //   })
+  //     .then(response => response.json())
+  //     .then(userInfo => setUserInfo(userInfo))
+  //     .catch(error => console.error('Error fetching user profile:', error));
+  // }, [setUserInfo]);
 
   function logout() {
     fetch(`${base_url}/logout`, {
@@ -107,13 +136,13 @@ export default function Header() {
                     {username && (
                       <>
                         <div className="toggleitems">
-                          <a>
+                          <p>
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-fill-check" viewBox="0 0 16 16">
                               <path d="M12.5 16a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7m1.679-4.493-1.335 2.226a.75.75 0 0 1-1.174.144l-.774-.773a.5.5 0 0 1 .708-.708l.547.548 1.17-1.951a.5.5 0 1 1 .858.514ZM11 5a3 3 0 1 1-6 0 3 3 0 0 1 6 0"/>
                               <path d="M2 13c0 1 1 1 1 1h5.256A4.493 4.493 0 0 1 8 12.5a4.49 4.49 0 0 1 1.544-3.393C9.077 9.038 8.564 9 8 9c-5 0-6 3-6 4"/>
                             </svg>
                             &nbsp;Signed in as: {username}
-                          </a>
+                          </p>
                         </div>
                         {writer === 0 && (
                           <div className="toggleitems">
