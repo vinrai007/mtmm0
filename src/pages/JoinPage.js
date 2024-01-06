@@ -3,6 +3,7 @@ import React from 'react';
 import {useContext, useEffect} from "react";
 import { UserContext } from "../UserContext";
 import { Link } from "react-router-dom";
+import { Navigate } from "react-router-dom";
 import Nav from 'react-bootstrap/Nav';
 import "bootstrap/dist/css/bootstrap.min.css";
 import { toast } from 'react-toastify';
@@ -12,7 +13,8 @@ import 'react-toastify/dist/ReactToastify.css';
 
 
 const JoinAsWriterPage = () => {
-      const base_url = `https://mtmm1-2-backend.onrender.com`;
+      const [redirect, setRedirect] = useState(false);  
+    const base_url = `https://mtmm1-2-backend.onrender.com`;
     const { setUserInfo, userInfo } = useContext(UserContext);
     const userId = userInfo.id;
   useEffect(() => {
@@ -41,14 +43,18 @@ const JoinAsWriterPage = () => {
       if (response.ok) {
         // If the request is successful, update the user information
           setUserInfo((UserInfo) => ({ ...UserInfo, writer: 1 }));
-                        toast.success('You are now a writer!');
+          toast.success('You are now a writer!');
+                  setRedirect(true);
       } else {
         console.error('Failed to join as a writer');
       }
     } catch (error) {
       console.error('An error occurred during joining as a writer:', error);
     }// Handle the logic to join as a writer (make an API call, update user info, etc.)
-  };
+    };
+      if (redirect) {
+    return <Navigate to={'/'} />;
+  }
 
   return (
     <div className='joinpage'>
@@ -118,7 +124,8 @@ const JoinAsWriterPage = () => {
       {/* <p>Are you interested in becoming a writer? Click the button below to join!</p> */}
           <button onClick={handleJoinAsWriter}>
               {/* <link to="/login" > Join as Writer</link> */}
-              <Nav.Link href="/login">Join as Writer</Nav.Link>
+              {/* <Nav.Link href="/login">Join as Writer</Nav.Link> */}
+              Join as Writer
        </button>
     </div>
   );

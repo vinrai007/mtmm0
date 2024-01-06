@@ -13,7 +13,8 @@ function SocialInteractionBar({ postId }) {
   const {userInfo} = useContext(UserContext);
   const [isLiked, setIsLiked] = useState(false);
   const [likesCount, setLikesCount] = useState(0);
-  const base_url = `https://mtmm1-2-backend.onrender.com`
+  const base_url = `https://mtmm1-2-backend.onrender.com`;
+  const front_url = `https://mtm-6emn.onrender.com`;
   const userId = userInfo.id;
       useEffect(() => {
         // Fetch initial like status and count from the backend
@@ -29,7 +30,7 @@ function SocialInteractionBar({ postId }) {
   const [showModal, setShowModal] = useState(false);
   const shareLink = `/post/${postId}`;
 
-  const linkToShare = `${base_url}${shareLink}`;
+  const linkToShare = `${front_url}${shareLink}`;
 
   const [postInfo, setPostInfo] = useState({
     likes: 0,

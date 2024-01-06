@@ -1,7 +1,6 @@
 import Post from "../Post";
 import {useEffect, useState} from "react";
 import Loader from 'react-loaders'
-
 import Spinner from 'react-bootstrap/Spinner';
 import Carousel from 'react-bootstrap/Carousel';
 import Button from 'react-bootstrap/Button';
@@ -17,6 +16,7 @@ import Nav from 'react-bootstrap/Nav';
 
 // import Post from "../Post";
 import "bootstrap/dist/css/bootstrap.min.css";
+import { Link } from "react-router-dom";
 
 
 export default function HomePage() {
@@ -96,12 +96,12 @@ const handleSearch = () => {
         <Modal.Footer>
           <Button variant="secondary" onClick={handleClose}>
                        <Nav.Item>
-                                           <Nav.Link href="/login">Sign in</Nav.Link>
+                                           <Link to="/login">Sign in</Link>
                                            </Nav.Item>
           </Button>
           <Button variant="primary" onClick={handleClose}>
                        <Nav.Item>
-                                           <Nav.Link href="/register">Register</Nav.Link>
+                                           <Link to="/register">Register</Link>
                                            </Nav.Item>
           </Button>
         </Modal.Footer>

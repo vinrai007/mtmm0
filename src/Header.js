@@ -131,7 +131,7 @@ export default function Header() {
               </Offcanvas.Header>
               <Offcanvas.Body>
                 <Nav className="justify-content-end flex-grow-1 pe-3">
-                  <Nav.Link to="/login">Personal</Nav.Link>
+                  <Link to="/login">Personal</Link>
                   <Nav>
                     {username && (
                       <>
@@ -197,7 +197,7 @@ export default function Header() {
                                  <Button variant="secondary" onClick={logout}>
                                           
                                            <Nav.Item>
-                                           <Nav.Link href="/login">Yes, I do.</Nav.Link>
+                                           <Link to="/login">Yes, I do.</Link>
                                            </Nav.Item>
                                   </Button>
                                  <Button variant="primary" onClick={handleClose}>
@@ -227,22 +227,22 @@ export default function Header() {
                       </>
                       )}
                   </Nav>
-                  {/* <Nav.Link href="#action2">Link</Nav.Link> */}
+                  {/* <Link href="#action2">Link</Link> */}
                   <NavDropdown
                     title="More"
                     id={`offcanvasNavbarDropdown-expand-${expand}`}
                   >
                     <NavDropdown.Item href="#action3">
-                              <Nav.Link href="https://mtm-6emn.onrender.com/Home">Home</Nav.Link>
+                              <Link to="/Home">Home</Link>
 
                     </NavDropdown.Item>
                     <NavDropdown.Item href="#action4">
-                              <Nav.Link href="https://mtm-6emn.onrender.com/Archive">Archive</Nav.Link>
+                              <Link to="/Archive">Archive</Link>
 
                     </NavDropdown.Item>
                     <NavDropdown.Divider />
                     <NavDropdown.Item href="#action5">
-                              <Nav.Link href="/About">About</Nav.Link>
+                              <Link to="/About">About</Link>
 
                     </NavDropdown.Item>
                   </NavDropdown>
@@ -266,25 +266,25 @@ export default function Header() {
         <div className="headerdw">
          <Nav justify variant="tabs" defaultActiveKey="/home">
       <Nav.Item>
-        <Nav.Link href="/Home">Home</Nav.Link>
+        <Link to="/Home">Home</Link>
       </Nav.Item>
       <Nav.Item>
-        <Nav.Link href="/Archive">Archive</Nav.Link>
+        <Link to="/Archive">Archive</Link>
       </Nav.Item>
       <Nav.Item>
-        <Nav.Link href="/About">About</Nav.Link>
+        <Link to="/About">About</Link>
       </Nav.Item>
       {/*  */}
     </Nav>
         {/* <Nav justify variant="tabs" defaultActiveKey="/home">
       <Nav.Item>
-        <Nav.Link  href="/home">Home</Nav.Link>
+        <Link  href="/home">Home</Link>
       </Nav.Item>
       <Nav.Item>
-        <Nav.Link href="/Archive">Archive</Nav.Link>
+        <Link href="/Archive">Archive</Link>
       </Nav.Item>
       <Nav.Item>
-        <Nav.Link href="/About">About</Nav.Link>
+        <Link href="/About">About</Link>
       </Nav.Item>
     </Nav> */}
     </div>

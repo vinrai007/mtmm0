@@ -1,6 +1,7 @@
 // Import the necessary dependencies
 import { useState } from "react";
 import { Navigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import NewsletterSubscriptionForm from "../SubscriptionForm";
 
 // Define the RegisterPage component
