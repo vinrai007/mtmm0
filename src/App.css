@@ -26,7 +26,7 @@ main {
     /* height: 100vh; */
   margin: 0 auto;
   background-color: #F2F1EB;
-  padding-bottom: 40px;
+  /* padding-bottom: 40px; */
   /* height: 100%; */
       font-family: nyt-cheltenham, georgia, 'times new roman', times, serif;
 }
@@ -115,6 +115,7 @@ header nav {
 }
 .toggleitems:hover{
   color: #2E8A99;
+  background-color: #F2F1EB;
 }
 .toggleitems a{
   text-decoration: none;
@@ -126,6 +127,9 @@ header nav {
 .dropdown a {
   text-decoration: none;
   color: #000;
+}
+.user-info{
+  padding-bottom: 10px;
 }
 .headerdw{
   max-width: 960px;
@@ -183,6 +187,7 @@ header nav {
 .joinpage{
   max-width: 860px;
   margin: auto;
+  padding: 10px;
 }
 .joinpage li{
   max-width: 800px;
@@ -268,9 +273,13 @@ header nav {
     margin: auto;
     /* max-width: 100%; */
     overflow: visible;
+    min-height: 100vh;
 }
 .home a {
   text-decoration: none;
+}
+.index {
+  min-height: 100vh;
 }
 .index a{
   text-decoration: none;
@@ -315,6 +324,7 @@ div h1{
 .about{
   max-width: 860px;
   margin: auto;
+  padding: 10px;
 }
 
 .about h1{
@@ -548,7 +558,7 @@ div.comment-box{
   max-width: 960px;
   margin: 20px auto;
   padding: 10px;
-      height: 100vh;
+      min-height: 100vh;
 }
 .createnewpost input {
   display: block;
@@ -564,7 +574,7 @@ div.comment-box{
   max-width: 960px;
   margin: 20px auto;
   padding: 10px;
-  /* height: 100vh; */
+  min-height: 100vh;
 }
 
 .editpost input {
@@ -587,6 +597,7 @@ div.post-page{
   padding: 10px;
   max-width: 960px;
   margin: 0 auto;
+  min-height: 100vh;
 }
 div.post-page div.image {
       /* width: 860px;
@@ -658,4 +669,44 @@ div.post-page a.edit-btn {
 
 a svg {
   height: 20px;
+}
+
+.footer {
+  /* display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center; */
+  background-color: black;
+  color: white;
+  padding: 20px;
+}
+.footer-page{
+  max-width: 960px;
+  margin: auto;
+    display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      align-items: center;
+      background-color: black;
+      color: white;
+      padding: 20px;
+}
+.footer-page p{
+  padding-top: 10px;
+}
+.footer-icon{
+  border-radius: 50%;
+    border: 2px solid #ddd;
+    padding: 10px;
+}
+
+.footer-block {
+  margin-bottom: 10px;
+  padding: 0px 10px;
+}
+
+.footer-block a {
+  color: white;
+  margin-right: 10px;
+  text-decoration: none;
 }
