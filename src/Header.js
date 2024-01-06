@@ -188,7 +188,7 @@ export default function Header() {
                       </>
                     )}
                   </Nav>
-                    <Modal show={show} onHide={handleClose}>
+                    <Modal show={show} onHide={handleClose} className="modal">
                                <Modal.Header closeButton>
                               <Modal.Title>Hey there,</Modal.Title>
                                </Modal.Header>

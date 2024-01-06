@@ -105,9 +105,18 @@ const handleSearch = () => {
             </div>
             </div>
       <div className="index">
-        {sortedPosts.length > 0 && sortedPosts.map((post) => (
+                      {sortedPosts.length > 0 &&
+      sortedPosts
+        .filter((post) => {
+          const searchRegex = new RegExp(searchQuery, 'i'); // 'i' for case-insensitive
+          return searchRegex.test(post.title) || searchRegex.test(post.summary);
+        })
+        .map((post) => (
+          <Post {...post} key={post.id} />
+        ))}
+        {/* {sortedPosts.length > 0 && sortedPosts.map((post) => (
         <Post key={post.id} {...post} />
-      ))} 
+      ))}  */}
       {/* {posts.length > 0 && posts.map(post => (
         <Post {...post} />
       ))} */}

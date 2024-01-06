@@ -88,7 +88,7 @@ const handleSearch = () => {
     return (
       <>
         {!username && (
-                <Modal show={show} >
+                <Modal show={show} className="modal" >
         <Modal.Header >
           <Modal.Title>Matters That Matter</Modal.Title>
         </Modal.Header>
