@@ -131,7 +131,7 @@ export default function Header() {
               </Offcanvas.Header>
               <Offcanvas.Body>
                 <Nav className="justify-content-end flex-grow-1 pe-3">
-                  <Link to="/login">Personal</Link>
+                  <h6>Personal</h6>
                   <Nav>
                     {username && (
                       <>
@@ -233,16 +233,16 @@ export default function Header() {
                     id={`offcanvasNavbarDropdown-expand-${expand}`}
                   >
                     <NavDropdown.Item href="#action3">
-                              <Link to="/Home">Home</Link>
+                              <Link to="/Home" className="dropdown">Home</Link>
 
                     </NavDropdown.Item>
                     <NavDropdown.Item href="#action4">
-                              <Link to="/Archive">Archive</Link>
+                              <Link to="/Archive" className="dropdown">Archive</Link>
 
                     </NavDropdown.Item>
                     <NavDropdown.Divider />
                     <NavDropdown.Item href="#action5">
-                              <Link to="/About">About</Link>
+                              <Link to="/About" className="dropdown">About</Link>
 
                     </NavDropdown.Item>
                   </NavDropdown>
@@ -265,15 +265,23 @@ export default function Header() {
         </div>
         <div className="headerdw">
          <Nav justify variant="tabs" defaultActiveKey="/home">
-      <Nav.Item>
-        <Link to="/Home">Home</Link>
-      </Nav.Item>
-      <Nav.Item>
-        <Link to="/Archive">Archive</Link>
-      </Nav.Item>
-      <Nav.Item>
-        <Link to="/About">About</Link>
-      </Nav.Item>
+              <Link to="/Home" className="nav-link">
+                <Nav.Item>
+                Home
+                </Nav.Item>
+            </Link>
+              <Link to="/Archive" className="nav-link">
+                <Nav.Item>
+                Archive
+                </Nav.Item>
+            </Link>
+      {/* <Nav.Item> */}
+              <Link to="/About" className="nav-link">
+                <Nav.Item>
+                About
+                </Nav.Item>
+            </Link>
+      {/* </Nav.Item> */}
       {/*  */}
     </Nav>
         {/* <Nav justify variant="tabs" defaultActiveKey="/home">

@@ -123,6 +123,10 @@ header nav {
 .toggleitems a:hover{
     color: #2E8A99;
 }
+.dropdown a {
+  text-decoration: none;
+  color: #000;
+}
 .headerdw{
   max-width: 960px;
   margin: 0% auto;
@@ -132,14 +136,34 @@ header nav {
       /* Adjust the alpha value as needed */
       border-radius: 10px 10px 0 0;
 }
-.headerdw .nav-link{
+.headerdw a{
   color: white;
 }
-.headerdw .nav-link:hover {
+/* .headerdw a:hover {
+  color:  black;
+} */
+/* .headerdw .nav-item:hover{
+  background-color: #F2F1EB;
+} */
+.headerdw a {
+      flex-basis: 0;
+      flex-grow: 1;
+      text-align: center;
+}
+.headerdw a.nav-link:hover {
+  background-color: #F2F1EB;
+  border-color: #F2F1EB;
+  /* Set the color for active links */
+}
+.headerdw a:hover {
+  color: black;
+  /* Set the color for active links */
+}
+.headerdw a.nav-link.active {
   color: white;
 }
 
-.headerdw .nav-tabs .nav-link.active{
+.headerdw .nav-item .nav-link.active{
   background-color: #F2F1EB ;
       border-color: #F2F1EB;
 }
@@ -147,7 +171,14 @@ header nav {
   /* border-bottom-width: 0px;} */
     --bs-nav-tabs-border-bottom-width: 0px;
     border-color: #F2F1EB;
-
+}
+.headerdw .nav-item {
+  color: white;
+  /* Set the color for active links */
+}
+.headerdw .nav-item:hover {
+  color: black;
+  /* Set the color for active links */
 }
 .joinpage{
   max-width: 860px;
