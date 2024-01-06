@@ -276,6 +276,7 @@ header nav {
     margin: auto;
     /* max-width: 100%; */
     overflow: visible;
+    padding-bottom: 10px;
     /* min-height: 100vh; */
 }
 .home a {
@@ -283,6 +284,7 @@ header nav {
 }
 .index {
   min-height: 100vh;
+  padding-bottom: 10px;
 }
 .index a{
   text-decoration: none;

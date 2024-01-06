@@ -13,14 +13,14 @@ import 'react-toastify/dist/ReactToastify.css';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <BrowserRouter>
-    {/* <HashRouter> */}
-      {/* <div> */}
+    {/* <BrowserRouter> */}
+    <HashRouter>
+      <div>
       <App />
         <ToastContainer />
-        {/* </div> */}
-    {/* </HashRouter> */}
-    </BrowserRouter>
+         </div>
+    </HashRouter>
+    {/* // </BrowserRouter>  */}
   </React.StrictMode>
 );
 
