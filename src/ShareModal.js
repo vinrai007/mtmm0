@@ -63,7 +63,10 @@ const ShareModal = ({ show, onHide, linkToShare }) => {
         <Modal.Title>MTM</Modal.Title>
       </Modal.Header>
       <Modal.Body>
-        <p>{linkToShare}</p>
+                        {/* <p>{linkToShare}</p> */}
+                        <p>
+                            Share this Post
+                        </p>
         <Button className='send-btn' variant="" onClick={() => handleShare('whatsapp')}>
             <div>
                  <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="green" class="bi bi-whatsapp" viewBox="0 0 16 16">

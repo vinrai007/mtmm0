@@ -28,7 +28,7 @@ function SocialInteractionBar({ postId }) {
     }, [postId, userId, base_url]);
 
   const [showModal, setShowModal] = useState(false);
-  const shareLink = `/post/${postId}`;
+  const shareLink = `/#/post/${postId}`;
 
   const linkToShare = `${front_url}${shareLink}`;
 
