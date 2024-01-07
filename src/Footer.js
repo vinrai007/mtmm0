@@ -12,7 +12,7 @@ const Footer = () => {
         <p>Terms and Privacy policy</p>
       </div>
       <div className="footer-block">
-        <p>Developed by WEBAR</p>
+        <p className='webar'>Developed by <a href='https://wbar.onrender.com/'  >WEBAR</a></p>
       </div>
       <div className="footer-block">
         {/* <p>Follow us:</p> */}

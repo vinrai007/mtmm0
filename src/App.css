@@ -718,3 +718,9 @@ a svg {
   margin-right: 10px;
   text-decoration: none;
 }
+.footer-block a:hover{
+  color: #2E8A99;
+}
+.webar a{
+  color: #3085C3;
+}
