@@ -1,41 +1,129 @@
-import {useEffect, useState} from "react";
-import {Navigate, useParams} from "react-router-dom";
+// import {useEffect, useState} from "react";
+// import {Navigate, useParams} from "react-router-dom";
+// import Editor from "../Editor";
+
+// export default function EditPost() {
+//   const {id} = useParams();
+//   const [title,setTitle] = useState('');
+//   const [summary,setSummary] = useState('');
+//   const [content,setContent] = useState('');
+//   const [files, setFiles] = useState('');
+//   const [redirect, setRedirect] = useState(false);
+//     const base_url = `https://mtmm1-2-backend.onrender.com`;
+
+//   useEffect(() => {
+//     fetch(`${base_url}/post/`+id)
+//       .then(response => {
+//         response.json().then(postInfo => {
+//           setTitle(postInfo.title);
+//           setContent(postInfo.content);
+//           setSummary(postInfo.summary);
+//         });
+//       });
+//   }, [base_url , id]);
+
+//   async function updatePost(ev) {
+//     ev.preventDefault();
+//     const data = new FormData();
+//     data.set('title', title);
+//     data.set('summary', summary);
+//     data.set('content', content);
+//     data.set('id', id);
+//     if (files?.[0]) {
+//       data.set('file', files?.[0]);
+//     }
+//     const response = await fetch(`${base_url}/post`, {
+//       method: 'PUT',
+//       body: data,
+//       credentials: 'include',
+//     });
+//     if (response.ok) {
+//       setRedirect(true);
+//     }
+//   }
+
+//   if (redirect) {
+//     return <Navigate to={'/post/'+id} />
+//   }
+
+//   return (
+//     <form onSubmit={updatePost} className="editpost">
+//       <input type="title"
+//              placeholder={'Title'}
+//              value={title}
+//              onChange={ev => setTitle(ev.target.value)} />
+//       <input type="summary"
+//              placeholder={'Summary'}
+//              value={summary}
+//              onChange={ev => setSummary(ev.target.value)} />
+//       <input type="file"
+//              onChange={ev => setFiles(ev.target.files)} />
+//       <Editor onChange={setContent} value={content} />
+//       <button style={{marginTop:'5px'}}>Update post</button>
+//     </form>
+//   );
+// }
+
+
+import { useEffect, useState } from "react";
+import { Navigate, useParams } from "react-router-dom";
 import Editor from "../Editor";
 
 export default function EditPost() {
-  const {id} = useParams();
-  const [title,setTitle] = useState('');
-  const [summary,setSummary] = useState('');
-  const [content,setContent] = useState('');
-  const [files, setFiles] = useState('');
+  const { id } = useParams();
+  const [title, setTitle] = useState("");
+  const [summary, setSummary] = useState("");
+  const [content, setContent] = useState("");
+  const [files, setFiles] = useState("");
   const [redirect, setRedirect] = useState(false);
-    const base_url = `https://mtmm1-2-backend.onrender.com`;
+  const base_url = `https://mtmm1-2-backend.onrender.com`;
 
   useEffect(() => {
-    fetch(`${base_url}/post/`+id)
-      .then(response => {
-        response.json().then(postInfo => {
+    fetch(`${base_url}/post/` + id)
+      .then((response) => {
+        response.json().then((postInfo) => {
           setTitle(postInfo.title);
           setContent(postInfo.content);
           setSummary(postInfo.summary);
         });
       });
-  }, [base_url , id]);
+  }, [base_url, id]);
+
+  const MAX_TITLE_LENGTH = 20;
+  const MAX_SUMMARY_LENGTH = 40;
+
+  const handleTitleChange = (ev) => {
+    const inputValue = ev.target.value;
+    if (inputValue.length <= MAX_TITLE_LENGTH) {
+      setTitle(inputValue);
+    } else {
+      setTitle(inputValue.substring(0, MAX_TITLE_LENGTH));
+    }
+  };
+
+  const handleSummaryChange = (ev) => {
+    const inputValue = ev.target.value;
+    if (inputValue.length <= MAX_SUMMARY_LENGTH) {
+      setSummary(inputValue);
+    } else {
+      setSummary(inputValue.substring(0, MAX_SUMMARY_LENGTH));
+    }
+  };
 
   async function updatePost(ev) {
     ev.preventDefault();
     const data = new FormData();
-    data.set('title', title);
-    data.set('summary', summary);
-    data.set('content', content);
-    data.set('id', id);
+    data.set("title", title);
+    data.set("summary", summary);
+    data.set("content", content);
+    data.set("id", id);
     if (files?.[0]) {
-      data.set('file', files?.[0]);
+      data.set("file", files?.[0]);
     }
     const response = await fetch(`${base_url}/post`, {
-      method: 'PUT',
+      method: "PUT",
       body: data,
-      credentials: 'include',
+      credentials: "include",
     });
     if (response.ok) {
       setRedirect(true);
@@ -43,23 +131,26 @@ export default function EditPost() {
   }
 
   if (redirect) {
-    return <Navigate to={'/post/'+id} />
+    return <Navigate to={"/post/" + id} />;
   }
 
   return (
     <form onSubmit={updatePost} className="editpost">
-      <input type="title"
-             placeholder={'Title'}
-             value={title}
-             onChange={ev => setTitle(ev.target.value)} />
-      <input type="summary"
-             placeholder={'Summary'}
-             value={summary}
-             onChange={ev => setSummary(ev.target.value)} />
-      <input type="file"
-             onChange={ev => setFiles(ev.target.files)} />
+      <input
+        type="title"
+        placeholder={"Title"}
+        value={title}
+        onChange={handleTitleChange}
+      />
+      <input
+        type="summary"
+        placeholder={"Summary"}
+        value={summary}
+        onChange={handleSummaryChange}
+      />
+      <input type="file" onChange={(ev) => setFiles(ev.target.files)} />
       <Editor onChange={setContent} value={content} />
-      <button style={{marginTop:'5px'}}>Update post</button>
+      <button style={{ marginTop: "5px" }}>Update post</button>
     </form>
   );
 }

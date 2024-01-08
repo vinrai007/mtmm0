@@ -16,6 +16,7 @@ body {
 
 img {
   max-width: 100%;
+  /* margin: auto; */
   /* max-height: 100%;
   object-fit: cover; */
 }
@@ -229,6 +230,7 @@ header nav {
 .slides div.post div.image{
     width: 860px;
     height: 400px;
+    /* height: auto; */
     margin: auto;
     border-radius: 10px;
     /* padding: 10px; */
@@ -609,7 +611,7 @@ div.post-page{
 div.post-page div.image {
       /* width: 860px;
         height: 400px; */
-  max-height: 400px;
+  /* max-height: 400px; */
   display: flex;
   overflow: hidden;
 }
@@ -618,7 +620,19 @@ div.post-page div.image img {
   /* max-height: 100px; */
   object-fit: cover;
   object-position: center center;
-  width: 100%;
+  /* width: 90%; */
+  /* margin: auto; */
+  height: auto;
+}
+div.post-page img{
+  /* margin: auto; */
+  /* justify-content: center; */
+    /* max-height:600px; */
+    height: auto;
+    object-fit: cover;
+      /* display: flex; */
+      max-width:  100%;
+      /* object-position: center center; */
 }
 
 div.post-page a {
@@ -686,7 +700,7 @@ a svg {
   background-color: black;
   color: white;
   padding: 20px;
-  margin-top: 15px;
+  margin-top: 25px;
 }
 .footer-page{
   max-width: 960px;
