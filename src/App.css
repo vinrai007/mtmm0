@@ -621,7 +621,7 @@ div.post-page div.image img {
   object-fit: cover;
   object-position: center center;
   /* width: 90%; */
-  /* margin: auto; */
+  margin: auto;
   height: auto;
 }
 div.post-page img{
