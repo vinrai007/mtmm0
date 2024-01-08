@@ -194,11 +194,17 @@ export default function Header() {
                                </Modal.Header>
                                <Modal.Body>Do you want to Sign out?</Modal.Body>
                                <Modal.Footer>
-                                 <Button variant="secondary" onClick={logout}>
+                                 <Button variant="secondary" >
                                           
-                                           <Nav.Item>
-                                           <Link to="/login">Yes, I do.</Link>
-                                           </Nav.Item>
+                                           {/* <Nav.Item> */}
+                        <Link to="/login">
+                          <Button variant="secondary" >
+                                          
+                                           {/* <Nav.Item> */}
+                                           Yes, I do.
+                                           {/* </Nav.Item> */}
+                                  </Button></Link>
+                                           {/* </Nav.Item> */}
                                   </Button>
                                  <Button variant="primary" onClick={handleClose}>
                                              No, I want to stay.

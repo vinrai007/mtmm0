@@ -94,15 +94,17 @@ const handleSearch = () => {
         </Modal.Header>
         <Modal.Body>Please Sign in to continue !!</Modal.Body>
         <Modal.Footer>
-          <Button variant="secondary" onClick={handleClose}>
-                       <Nav.Item>
-                                           <Link to="/login">Sign in</Link>
-                                           </Nav.Item>
+                                 <Button variant="secondary" >
+                  <Link to="/login">
+                              <Button variant="secondary" onClick={handleClose}>
+                                           Sign in
+          </Button></Link>
           </Button>
           <Button variant="primary" onClick={handleClose}>
-                       <Nav.Item>
-                                           <Link to="/register">Register</Link>
-                                           </Nav.Item>
+                  <Link to="/register">
+                    <Button variant="primary" onClick={handleClose}>
+                                           Register
+          </Button></Link>
           </Button>
         </Modal.Footer>
       </Modal>

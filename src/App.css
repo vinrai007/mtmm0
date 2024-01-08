@@ -614,6 +614,7 @@ div.post-page div.image {
   /* max-height: 400px; */
   display: flex;
   overflow: hidden;
+  padding-bottom: 10px;
 }
 
 div.post-page div.image img {
