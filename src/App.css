@@ -609,7 +609,7 @@ div.post-page{
   min-height: 100vh;
 }
 div.post-page div.image {
-       width: 860px;
+       width: 960px;
         /* height: 400px;  */
   /* max-height: 400px; */
   display: flex;
