@@ -118,7 +118,8 @@ export default function Header() {
               // style={{ color: 'white' }}
               style={{ border: '2px solid white' }}
             />
-            <Navbar.Offcanvas
+            <div className="offcanvas">
+            <Navbar.Offcanvas 
               id={`offcanvasNavbar-expand-${expand}`}
               aria-labelledby={`offcanvasNavbarLabel-expand-${expand}`}
               placement="end"
@@ -294,7 +295,8 @@ export default function Header() {
                   <Button variant="outline-success">Search</Button>
                 </Form> */}
               </Offcanvas.Body>
-            </Navbar.Offcanvas>
+              </Navbar.Offcanvas>
+              </div>
           </Container>
         </Navbar>
       ))}

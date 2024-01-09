@@ -111,6 +111,18 @@ header nav {
     margin: auto;
     /* background-color: rgba(0, 0, 0, 0.3); */    
 }
+/* div.navbar-offcanvas{
+  width: 10px;
+} */
+div#offcanvasNavbar-expand-0{
+  max-width: 65%;
+}
+/* div.offcanvas-header {
+  width: 100px;
+}
+div.offcanvas-body {
+  width: 100px;
+} */
 .toggleitems{
   padding: 5px 5px 5px 5px;
 }
@@ -500,6 +512,9 @@ form.register {
 /* .infoform{
   height: 500px;
 } */
+.infoform{
+  padding: 10px;
+}
 .infoform input {
   display: block;
   margin-bottom: 5px;
